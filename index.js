@@ -39,7 +39,7 @@ app.get("/api",(req,res)=>{
 
 app.post("/api/upload",upload.single("picture"),async (req,res)=>{
     try{
-        const response = await axios.post('http://127.0.0.1:5000/imageTodata',{data:{"imageUrl":"http://"+req.headers.host+"/"+req.file.path.split("/")[1]}})
+        const response = await axios.post('http://127.0.0.1:5000/imageTodata',{data:{"imageUrl":"http://imagehub-n7dz.onrender.com/img-1718782278695.jpg"}})
         console.log(response)
        return res.status(201).json({
             status:"success",
