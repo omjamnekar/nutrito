@@ -3,10 +3,11 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
 
-from src.image_to_text import image_text
-from flask import Flask, request
+from image_to_text.image_text import image_to_text
+from flask import Flask, request, jsonify
 
-
+# string to object
+import json
 
 app = Flask(__name__)
 
@@ -18,13 +19,17 @@ def hello():
 def upload_image():
     # get data from post request in json format
     data = request.json
-    image_to_text_data =image_text.image_to_text(data['imageUrl'])   
-    
-
+    image_to_text_data =image_to_text(data['data']['imageUrl'])   
+    # print(data["imageUrl"])
+    # image_to_text_data =image_to_text('https://i.pinimg.com/736x/1b/34/dd/1b34ddbed4fe56767fae40b3444c605b.jpg')   
+    text_to_dict = json.loads(image_to_text_data.text[9:-4])
+    # print(text_to_dict)
+    # print(image_to_text_data)
     # Process the file here
     # You can access the file data using file.read() or save it to the UPLOAD_FOLDER
-
-    return 'Image uploaded successfully'
+    # print(data['data']['imageUrl'])
+    # print(image_to_text_data.text)
+    return jsonify({"data":text_to_dict})
 
 if __name__ == '__main__':
     app.run()
