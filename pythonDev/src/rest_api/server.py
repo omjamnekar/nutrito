@@ -19,12 +19,15 @@ def hello():
 def upload_image():
     # get data from post request in json format
     data = request.json
-    image_to_text_data =image_to_text(data['imageUrl'])   
+    image_to_text_data =image_to_text(data['data']['imageUrl'])   
+    # print(data["imageUrl"])
     # image_to_text_data =image_to_text('https://i.pinimg.com/736x/1b/34/dd/1b34ddbed4fe56767fae40b3444c605b.jpg')   
-    text_to_dict = json.loads(image_to_text_data.text[8:-3])
+    text_to_dict = json.loads(image_to_text_data.text[9:-4])
+    # print(image_to_text_data)
     # Process the file here
     # You can access the file data using file.read() or save it to the UPLOAD_FOLDER
-    return jsonify(text_to_dict)
+    # print(data['data']['imageUrl'])
+    return jsonify({"data":text_to_dict})
 
 if __name__ == '__main__':
     app.run()
