@@ -27,7 +27,10 @@ app.get("/api",(req,res)=>{
 })
 
 
-app.post("/api/upload",uploadImage.single("picture"),upload)
+app.post("/api/initialPrompt",uploadImage.single("picture"),upload.initialPrompt)
+app.post("/api/ratioPrompt",uploadImage.single("picture"),upload.ratioPrompt)
+app.post("/api/healthPrompt",uploadImage.single("picture"),upload.healthPrompt)
+app.post("/api/conclusionPrompt",uploadImage.single("picture"),upload.conclusionPrompt)
 
 app.listen(port,()=>{
     console.log(`Server is started at port ${port}`)

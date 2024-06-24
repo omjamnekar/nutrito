@@ -1,21 +1,63 @@
+import axios from "axios";
 import fs from "fs";
-import dotenv from "dotenv";
 import path from "path";
-import generateData from "../util/image_text.js";
-dotenv.config()
 
 const _dirname = path.resolve();
 const uploadFolder = path.join(_dirname,"uploads");
 fs.mkdirSync(uploadFolder,{recursive:true})
 
-const upload = async (req,res)=>{
-    const imageUrl = `${uploadFolder}/${req.file.path.split("/")[1]}`;
-    try{
-        const data = await generateData(imageUrl,req.file.mimetype);
-       await fs.unlinkSync(imageUrl);
-    return res.json(data);
-    }catch(err){
-        return res.json({error:err})
+const upload = {
+    initialPrompt: async (req,res)=>{
+        const imageUrl = `http://${req.headers.host}/${req.file.path.split("\\")[1]}`;
+        const deleteImage = `${uploadFolder}\\${req.file.path.split("\\")[1]}`;
+        try{
+            const response = await axios.post('http://127.0.0.1:5000/initialPrompt',{data:{
+                "imageUrl":`${imageUrl}`       }})
+                await fs.unlinkSync(deleteImage);
+                return res.json(response.data);
+            }catch(err){
+                await fs.unlinkSync(deleteImage);
+            return res.json({error:err})
+        }
+    },
+    ratioPrompt: async (req,res)=>{
+        const imageUrl = `http://${req.headers.host}/${req.file.path.split("\\")[1]}`;
+        const deleteImage = `${uploadFolder}\\${req.file.path.split("\\")[1]}`;
+        try{
+            const response = await axios.post('http://127.0.0.1:5000/ratioPrompt',{data:{
+                "imageUrl":`${imageUrl}`       }})
+                await fs.unlinkSync(deleteImage);
+                return res.json(response.data);
+            }catch(err){
+                await fs.unlinkSync(deleteImage);
+            return res.json({error:err})
+        }
+    },
+    healthPrompt: async (req,res)=>{
+        const imageUrl = `http://${req.headers.host}/${req.file.path.split("\\")[1]}`;
+        const deleteImage = `${uploadFolder}\\${req.file.path.split("\\")[1]}`;
+        try{
+            const response = await axios.post('http://127.0.0.1:5000/healthPrompt',{data:{
+                "imageUrl":`${imageUrl}`       }})
+                await fs.unlinkSync(deleteImage);
+                return res.json(response.data);
+            }catch(err){
+                await fs.unlinkSync(deleteImage);
+            return res.json({error:err})
+        }
+    },
+    conclusionPrompt: async (req,res)=>{
+        const imageUrl = `http://${req.headers.host}/${req.file.path.split("\\")[1]}`;
+        const deleteImage = `${uploadFolder}\\${req.file.path.split("\\")[1]}`;
+        try{
+            const response = await axios.post('http://127.0.0.1:5000/conclusionPrompt',{data:{
+                "imageUrl":`${imageUrl}`       }})
+                await fs.unlinkSync(deleteImage);
+                return res.json(response.data);
+            }catch(err){
+                await fs.unlinkSync(deleteImage);
+            return res.json({error:err})
+        }
     }
 }
 
