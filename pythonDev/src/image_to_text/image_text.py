@@ -11,11 +11,7 @@ import ast
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
 
 # Importing necessary modules from the image_to_text package
-from image_to_text.util.prompt import Prompts
-from image_to_text.model.data_Binding import SpendingData
-from image_to_text.model.initial import InitialData
-from image_to_text.model.ratio_spe import RatioSpecified
-
+from prompt.prompt import Prompts
 # Importing and setting up the generative AI model
 import google.generativeai as gai
 
@@ -55,13 +51,18 @@ def process_image(image_url:str , prompt_type:str):
         'initialData': initial_data_text
         }
     elif prompt_type == "ratio_specified_text":
-        ratio_specified_text =  generate_content(img, 'ratioSpecifiedPrompt')
-        ratio_specified_text = json.loads(ratio_specified_text)
-        return {
-            'ratioSpecified': ratio_specified_text
-        }
+          
+       ratio_specified_text =  generate_content(img, 'ratioSpecifiedPrompt')
+       print(ratio_specified_text)
+       ratio_specified_text = json.loads(ratio_specified_text)
+        
+       return {
+                'ratioSpecified': ratio_specified_text
+            }
+        
     elif prompt_type == "health_consideration_text":
         healthConsideration_text =  generate_content(img, 'healthPrompt')
+        
         healthConsideration_text = json.loads(healthConsideration_text)
         return {
              'healthConsideration': healthConsideration_text
@@ -74,8 +75,15 @@ def process_image(image_url:str , prompt_type:str):
         }
 
 
+
 # Example usage
 
-print(process_image('https://i.pinimg.com/236x/18/96/ed/1896ed0605b561d70ea6bc4a5780aef1.jpg', 'initial_data_text'))    
+# print(process_image('https://imagehub-n7dz.onrender.com/IMG-20240617-WA0013-1719234482446.jpg', 'initial_data_text'))    
+
+# print(process_image('https://imagehub-n7dz.onrender.com/IMG-20240617-WA0013-1719234482446.jpg', 'ratio_specified_text'))    
+
+# print(process_image('https://imagehub-n7dz.onrender.com/IMG-20240617-WA0013-1719234482446.jpg', 'health_consideration_text'))    
+
+# print(process_image('https://imagehub-n7dz.onrender.com/IMG-20240617-WA0013-1719234482446.jpg', 'conclusion_text'))    
 # asyncio.run(process_image('https://m.media-amazon.com/images/I/81iTeA3lETL._AC_UF1000,1000_QL80_.jpg'))
 
