@@ -53,47 +53,48 @@ Instructions on how to use Nutrito:
 ## Technologies Used
 
 - **Flutter**: For building high-performance apps for both Android and iOS.
-    ![Flutter](https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png" alt="Flutter" width="100"/>
 - **TensorFlow**: For the machine learning model.
-    ![TensorFlow](https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TensorFlow" width="100"/>
 - **Google Colab**: Used for training the model.
-    ![Google Colab](https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab" width="100"/>
 - **TypeScript**: For type-safe JavaScript.
-    ![TypeScript](https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" width="100"/>
 - **Node.js and Express.js**: Backend development and server management tools.
-    ![Node.js](https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg)
-    ![Express.js](https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" width="100"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" alt="Express.js" width="100"/>
 - **Python**: For data processing and analysis.
-    ![Python](https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" width="100"/>
 - **Docker**: Containerized environments for consistent development and deployment.
-    ![Docker](https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.png)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.png" alt="Docker" width="100"/>
 - **Figma**: Design tool for creating and maintaining the app's user interface.
-    ![Figma](https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" width="100"/>
 - **React.js**: Framework for building responsive and interactive web interfaces.
-    ![React.js](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React.js" width="100"/>
 - **Jira**: Project management software for task tracking and collaboration.
-    ![Jira](https://upload.wikimedia.org/wikipedia/en/3/3f/Atlassian_Jira_logo.png)
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Atlassian_Jira_logo.png" alt="Jira" width="100"/>
 - **Firebase**: Backend services, including real-time database, authentication, and cloud storage.
-    ![Firebase](https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg" alt="Firebase" width="100"/>
 - **MongoDB**: NoSQL database management system for flexible and scalable data storage.
-    ![MongoDB](https://upload.wikimedia.org/wikipedia/en/4/45/MongoDB-Logo.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/45/MongoDB-Logo.svg" alt="MongoDB" width="100"/>
 - **Vercel**: Platform for efficient deployment and scalability of web applications.
-    ![Vercel](https://upload.wikimedia.org/wikipedia/commons/a/a7/Vercel_logo_black.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Vercel_logo_black.svg" alt="Vercel" width="100"/>
 - **Postman**: Tool for developing and testing HTTP requests.
-    ![Postman](https://upload.wikimedia.org/wikipedia/commons/a/ab/Postman_%28software%29.png)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Postman_%28software%29.png" alt="Postman" width="100"/>
 - **Katalon**: Testing software for automating various testing processes.
-    ![Katalon](https://upload.wikimedia.org/wikipedia/commons/e/e6/Katalon-logo-vector.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Katalon-logo-vector.svg" alt="Katalon" width="100"/>
 - **REST API**: Network structure for communication between services, servers, and frameworks.
-    ![REST API](https://upload.wikimedia.org/wikipedia/commons/f/fd/REST_API.png)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/REST_API.png" alt="REST API" width="100"/>
 - **Visual Studio Code**: Editor for creating backend and frontend components.
-    ![VS Code](https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code" width="100"/>
 - **Git and GitHub**: Tools for version control and collaboration.
-    ![Git](https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg)
-    ![GitHub](https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git" width="100"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="100"/>
 - **Dart**: Used for mobile application logic in Flutter.
-    ![Dart](https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png" alt="Dart" width="100"/>
 - **JavaScript**: Essential for web application logic and interactivity.
-    ![JavaScript](https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg)
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript" width="100"/>
+
 
 ## Contributing
 
