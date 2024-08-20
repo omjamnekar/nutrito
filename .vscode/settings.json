@@ -1,5 +1,7 @@
 {
     "python.analysis.extraPaths": [
-        "./pythonDev/src/mongoDB"
+        "./pythonDev/src/mongoDB",
+        "./pythonDev/src/rest_api",
+        "./pythonDev/src"
     ]
 }

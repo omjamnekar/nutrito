@@ -1,18 +1,32 @@
+from dotenv import load_dotenv
 from pymongo import MongoClient
+import os
 
-# Initialize MongoDB client
-client = MongoClient("mongodb://localhost:27017/")
-db = client["nutrito"]  # Replace with your database name
-collection = db["sample_collection"]  # Replace with your collection name
+
+load_dotenv()
+client = MongoClient(os.getenv("MONGO_USER_KEY"))
+db = client["Nutrito"]  
+collection = db["users"]  
 
 def get_user(username):
-    """Fetch user from MongoDB by username."""
-    
     return collection.find_one({"username": username})
 
 def validate_user(username, password):
-    """Validate user credentials."""
     user = get_user(username)
     if user and user['password'] == password:
         return True
     return False
+
+
+# EXMAPLE FOR TESTING MONGO CLIENT
+# ////////////////////////////////////////////////////////////////
+# #  usage:
+# username_to_search = "Shiva"  
+# password_to_validate = "12345678"  
+
+# get_user(username_to_search)
+
+# if validate_user(username_to_search, password_to_validate):
+#     print("User credentials are valid.")
+# else:
+#     print("Invalid credentials.")

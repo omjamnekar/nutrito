@@ -7,7 +7,7 @@ import 'package:moke_app/util/urls/python_Serv.dart';
 class PromptBuilder {
   final storage = FlutterSecureStorage();
   Future<void> login(String username, String password) async {
-    final url = URLS.pythonInitial + '/login'; // Ensure this URL is correct
+    final url = URLS.pythonVercel + '/login'; // Ensure this URL is correct
     final response = await http.post(
       Uri.parse(url),
       headers: {'Content-Type': 'application/json'},
@@ -18,6 +18,7 @@ class PromptBuilder {
       final data = json.decode(response.body);
       final token = data['token'];
       await storage.write(key: 'jwt_token2', value: token);
+
       print('Login successful');
     } else {
       print('Failed to login: ${response.statusCode}');
@@ -26,7 +27,8 @@ class PromptBuilder {
     }
   }
 
-  Future<void> fetchProtectedData(Function(Map<String, dynamic>) onDataDownload,
+  Future<Map<String, dynamic>> promptExecution(
+      Function(Map<String, dynamic>) onDataDownload,
       PromptEvent promptType) async {
     final token = await storage.read(key: 'jwt_token2');
     if (token == null) {
@@ -34,7 +36,7 @@ class PromptBuilder {
       throw Exception('No token found');
     }
 
-    final url = URLS.pythonInitial + '/' + promptType.name;
+    final url = URLS.pythonVercel + '/' + promptType.name;
     final response = await http.post(
       Uri.parse(url),
       headers: {
@@ -51,11 +53,14 @@ class PromptBuilder {
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
-      print('Data: $data');
+
       onDataDownload(data);
+      print("Data $data");
+      return {"data": data};
     } else {
       print('Failed to fetch data: ${response.statusCode}');
       print('Response body: ${response.body}');
+      return {"failed": "not able to fetch data"};
     }
   }
 }
