@@ -15,8 +15,8 @@ from prompt.prompt import Prompts
 import google.generativeai as gai
 
 
-# api_key = os.getenv("GOOGLE_API_KEY")
-api_key= "AIzaSyB9AnUnLAb5pVKPvCwXH8y5qO-JMYX-fW0"
+api_key = os.getenv("GOOGLE_API_KEY")
+# api_key= "AIzaSyB9AnUnLAb5pVKPvCwXH8y5qO-JMYX-fW0"
 gai.configure(api_key=api_key)
 model = gai.GenerativeModel('gemini-1.5-flash')
 
